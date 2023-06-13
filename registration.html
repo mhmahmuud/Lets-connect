@@ -1,0 +1,183 @@
+<html lang="en">
+
+    <style>
+        *{
+            margin: 0px;
+            box-sizing:border-box;
+             
+        }
+        header{
+            width: 100%;
+            height: 300px;
+            border:solid black 0px;
+            background-color: darkgray;
+            padding: 100px 25% 100px 25% ;
+        }
+        h2{
+            border: solid black 0px;
+            font-size:xx-large;
+            
+            color:white
+        }
+        nav{
+            width: 100%;
+            height: auto;
+            background-color: black;
+            color: white;
+            font-size:x-large;
+            text-align: right;
+            padding:5px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        nav p{
+            display: inline;
+            
+            padding: 5px;
+            
+        }
+        nav span{
+
+        
+            display: inline-block;
+            float: left;
+        }
+        #inline-1 {
+            border-right: solid 2px white;
+        }
+        #about{
+            /* border: solid black 1px; */
+            margin: 10px 10px 10px 10px;
+            text-align: center;
+            padding: 50px;
+            padding-top: 25px;
+        }
+        #about p{
+            /* border: solid black 1px; */
+            margin: 10px;
+            
+        }
+        #p-one-article{
+            /* border-radius: 10px; */
+            padding: 5px;
+            
+        }
+        h3{
+            text-align: center;
+            margin-bottom: 15px;
+            margin-top: 15px;
+        }
+        form{
+            border-top: solid grey 1px;
+            /* padding: 10px; */
+            width: 100%;
+        }
+        #name-details, #address-details, #prof-details{
+            width: 80%;
+            height: auto;
+            /* background-color: grey; */
+            margin: auto;
+            
+            padding: 20px;
+
+
+        }
+        input{
+            border: solid black 1px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        form p input{ 
+            width: 100%;
+
+        }
+        input{
+            height: 25px;
+        }
+        #button-div{
+            text-align: center;
+            
+        }
+        form button{
+        background-color:cornflowerblue;
+        width: 30%;
+        height: 30;
+        margin-top: 20px;
+        border-radius: 4px; 
+        
+        }
+        footer{
+        width: 100%;
+        margin-top: 40px;
+        background-color: gray;
+        color: white;
+        text-align: center;
+        
+        
+        
+
+       }
+        </style>
+        <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <header>
+        <h2>Let's connect platform that brings us together.</h2> 
+     </header>
+     <nav>
+         <span> Let's connect</span>
+       <p id="inline-1"> <a href="{% url "home" %}">Home</a> </p>
+       <p id="inline-2"> <a href="{% url "login" %}">Login</a> </p>
+       
+     </nav>
+    <article id="about">
+    <p id="p-one-article">Welcome to Lets connect platform. We believe fostering closer connections among colleagues. Our platform is designed to bring people together by providing a streamlined approach to networking and collaboration. By leveraging advanced filters, we help you connect with like-minded individuals based on various criteria such as occupation, city or more.  </p>
+    <br> 
+    </article>
+<h2>REGISTRATION</h2>
+
+
+        <form action="" method="POST">
+            {% csrf_token %}
+           <h3>WHAT IS YOU NAME ? </h3>
+            <div id="name-details"> 
+              <p>First name : <input type="text" name="firstname"> </p>
+              <p>Last name : <input type="text" name="lastname"> </p>
+               <p>email : <input type="email" name="email"> </p>
+    
+              <p>username : <input type="text" name="username"> </p>
+              
+              <p>password : <input type="password" name="password"> </p>
+              {% comment %} <p>password again : <input type="password" name="confrim-password"> </p> {% endcomment %}
+              <p>phone number : <input type="text" name="phone-number"> </p>
+              
+            </div>   
+            <h3>WHERE ARE YOU FROM WHERE DO YOU LIVE?</h3>
+                <div id="address-details">
+                    <p>State of origin : <input type="text" name="state-of-origin"> </p>
+                    <p>LGA : <input type="text" name="lga"> </p>
+                    <p>Country of residence : <input type="text" name="country-of-residence"> </p>
+                    <p>State  of residence : <input type="text" name="state-of-residence"> </p>
+                    <p>City : <input type="text" name="city"> </p> 
+
+                </div>
+            <h3>PROFESSIONAL DETAILS</h3>
+            <div id="prof-details">
+                <p>Occupation : <input type="text" name="occupation"> </p>
+                <p>Place of work : <input type="text" name="place-of-work"> </p>
+                <div id="button-div"><button type="submit"> Submit </button></div>
+            </div>
+
+        </form>
+   
+        <footer> copy right 2023</footer>
+</body>
+</html>
